@@ -1,0 +1,186 @@
+@font-face {
+  font-family: 'SFProText-Light';
+  src: url('./assets/SFProText-Light/SFProText-Light.eot');
+  src: url('./assets/SFProText-Light/SFProText-Light.eot?#iefix') format('embedded-opentype'),
+       url('./assets/SFProText-Light/SFProText-Light.svg#SFProText-Light') format('svg'),
+       url('./assets/SFProText-Light/SFProText-Light.ttf') format('truetype'),
+       url('./assets/SFProText-Light/SFProText-Light.woff') format('woff'),
+       url('./assets/SFProText-Light/SFProText-Light.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+/* @font-face {
+  font-family: 'SFProText-Regular';
+  src: url('./assets/SFProText-Regular/SFProText-Regular.eot');
+  src: url('./assets/SFProText-Regular/SFProText-Regular.eot?#iefix') format('embedded-opentype'),
+       url('./assets/SFProText-Regular/SFProText-Regular.svg#SFProText-Regular') format('svg'),
+       url('./assets/SFProText-Regular/SFProText-Regular.ttf') format('truetype'),
+       url('./assets/SFProText-Regular/SFProText-Regular.woff') format('woff'),
+       url('./assets/SFProText-Regular/SFProText-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+} */
+@font-face {
+  font-family: 'SFProText-Medium';
+  src: url('./assets/SFProText-Medium/SFProText-Medium.eot');
+  src: url('./assets/SFProText-Medium/SFProText-Medium.eot?#iefix') format('embedded-opentype'),
+       url('./assets/SFProText-Medium/SFProText-Medium.svg#SFProText-Medium') format('svg'),
+       url('./assets/SFProText-Medium/SFProText-Medium.ttf') format('truetype'),
+       url('./assets/SFProText-Medium/SFProText-Medium.woff') format('woff'),
+       url('./assets/SFProText-Medium/SFProText-Medium.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.PaymentCard{
+  width: 364px;
+  height: 223.78px;
+  background: transparent;
+  perspective: 1000px;
+  font-family: "SFProText-Light";
+  text-align: left;
+  color: #FFFFFF;
+  text-shadow: 0px 1px 2px #000000B3;
+}
+
+.PaymentCard .inner{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+  /* Fix First transition on chrome */
+  animation-name:  firstRenderFix;
+  animation-duration: 1ms;
+}
+.PaymentCard.flipped .inner{
+  transform: rotateY(180deg);
+}
+.PaymentCard .front, .PaymentCard .back{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0 10px 20px -10px #000000be;
+  border-radius: 15px;
+}
+.PaymentCard .front{
+  background-image: url('./assets/frontBgUndentified.svg');
+}
+.PaymentCard.identified .front{
+  background-image: url('./assets/frontBg.svg');
+}
+.PaymentCard .back{
+  transform: rotateY(180deg);
+  background-image: url('./assets/backBgUndentified.svg');
+}
+.PaymentCard.identified .back{
+  background-image: url('./assets/backBg.svg');
+}
+
+.PaymentCard .brand{
+  position: absolute;
+  top: 35.41px;
+  left:26.91px;
+  max-width: 69.16px;
+  max-height: 46px;
+  opacity: 1;
+  transition: opacity 0.2s;
+}
+.PaymentCard .brand.hidden{
+  opacity: 0;
+}
+
+.PaymentCard .number{
+  word-spacing: 10px;
+  letter-spacing: 2.31px;
+  font-size: 22px;
+  position: absolute;
+  top: 106.96px;
+  left: 31.49px;
+}
+.PaymentCard .number.untouched{
+  letter-spacing: 4.1px;
+}
+.PaymentCard .name{
+  font-size: 16px;
+  position: absolute;
+  top:167.13px;
+  left: 31.49px;
+}
+.PaymentCard .exp{
+  font-size: 16px;
+  position: absolute;
+  top:167.13px;
+  right: 33.37px;
+}
+.PaymentCard .cvv{
+  font-family: 'SFProText-Medium';
+  color: #3C3C3C;
+  font-size: 18px;
+  position: absolute;
+  top:108.2px;
+  left:178.46px;
+  text-shadow: none;
+}
+.PaymentCard .cvv.untouched{
+  top: 110.5px;
+  letter-spacing: 4px;
+}
+.imgsPreLoad{
+  background-image: url('./assets/backBgUndentified.svg'), url('./assets/frontBgUndentified.svg'), url('./assets/frontBg.svg'), url('./assets/backBg.svg')  ;
+  width: 0px;
+  height: 0px;
+}
+@keyframes firstRenderFix {
+  0%   {transform: rotateY(180deg)}
+  100% {transform: rotateY(0deg)}
+}
+@media (max-width:1024px){
+  .PaymentCard{
+    width: 260px;
+    height: 172.14px;
+  }
+  .PaymentCard .brand{
+    max-width: 53.31px;
+    max-height: 35px;
+    top:27.29px;
+    left:14px;
+  }
+  .PaymentCard .number{
+    top:78.24px;
+    left:14px;
+    font-size:19px;
+    word-spacing: -2px;
+  }
+  .PaymentCard .number.untouched{
+    word-spacing: -3.4px;
+  }
+  .PaymentCard .name{
+    top: 129.64px;
+    left: 14px;
+    font-size: 12px;
+  }
+  .PaymentCard .exp{
+    top: 129.64px;
+    right: 14px;
+    font-size: 12px;
+  }
+  .PaymentCard .cvv{
+    left: 136.46px;
+    top:83.0px;
+    font-size: 14px;
+   
+  }
+  .PaymentCard .cvv.untouched{
+    top:85.5px;
+    font-size: 14px;
+
+  }
+  .PaymentCard .front, .PaymentCard .back{
+    border-radius: 10px;
+  }
+}

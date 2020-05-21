@@ -1,24 +1,23 @@
-import React from 'react';
+import React,{useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
+import PaymentCard from './components/PaymentCard/PaymentCard';
 
 function App() {
+  const [flipped,setFlipped]= useState(false)
+  const [number,setNumber] = useState(null)
+  const toggleFlipped = async ()=>{
+    await setFlipped(!flipped)
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <PaymentCard 
+        flipped={flipped} 
+        number={number}
+        cvv='123'
+      />
+      <button onClick={toggleFlipped}>Toggle flipped</button>
+      <input type="text" onChange={e =>{setNumber(e.target.value)}} />
     </div>
   );
 }
