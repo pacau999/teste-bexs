@@ -1,0 +1,68 @@
+.CartAside{
+  background-color: white;
+  padding: 52px 20px;
+  width: 327px;
+}
+.CartAside .title{
+  font-size: 16px;
+  color: var(--textDark);
+}
+.CartAside .skeleton{
+  border-radius: 5px;
+}
+
+.CartAside .divider{
+  width: 100%;
+  height: 0;
+  border-bottom: 1px solid #707070;
+}
+.CartAside .divider.top{
+  margin: 24.5px 0 24.5px 0;
+}
+.CartAside .divider.bottom{
+  margin: 14.5px 0 19.5px 0;
+}
+
+.CartAside .title .skeleton{
+  background-color: #F7F7F7;
+  width: 238px;
+  height: 18px;
+}
+.CartAside .tr{
+  display: table-row;
+}
+.CartAside .tc{
+  display: table-cell;
+}
+.CartAside .details{
+  display: table;
+  width: 100%;
+  border-spacing: 0;
+}
+.CartAside .details .tc{
+  padding-bottom: 10px;
+}
+.CartAside .details .skeleton{
+  background-color: #F7F7F7;
+  height: 12px;
+}
+.CartAside .details .skeleton.left{
+  width: 197.51px;
+}
+.CartAside .details .skeleton.right{
+  width:44px
+}
+.CartAside .total{
+  display: table;
+  width: 100%;
+}
+.CartAside .total .skeleton{
+  background-color: #C9C9C9;
+  height: 12px;
+}
+.CartAside .total .skeleton.left{
+  width: 197.51px;
+}
+.CartAside .total .skeleton.right{
+  width:44px
+}

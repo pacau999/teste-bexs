@@ -6,7 +6,7 @@ const Stepper = (props) => {
   return (
     <div className="Stepper">
       {steps && steps.map((step,i)=>(
-        <div className="step">
+        <div className="step" key={i}>
           <div className={"icon "+ (i<current ? 'done' :'')}>
             {i<current ? <span className="icon-check" /> : <span className="number">{i+1}</span>}
           </div>

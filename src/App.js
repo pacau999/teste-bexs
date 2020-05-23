@@ -5,6 +5,8 @@ import PaymentCard from './components/PaymentCard/PaymentCard';
 import TextField  from './components/TextField/TextField';
 import Select from './components/Select/Select';
 import Stepper from './components/Stepper/Stepper';
+import Navbar from './components/Navbar/Navbar';
+import { CartAside } from './components/CartAside/CartAside';
 
 const floatToBrl = (x)  => {
   var brlS =x.toFixed(2)
@@ -26,6 +28,8 @@ function App() {
   }
   return (
     <div className="App">
+      <Navbar/>
+      <CartAside/>
       {/* <PaymentCard 
         flipped={flipped} 
         number={number}
