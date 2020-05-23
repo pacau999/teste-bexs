@@ -1,10 +1,50 @@
+@import url('./assets/icons-font/icon-font.css');
+
 .App {
-  text-align: center;
+  text-align: left;
+  font-family: "Verdana";
+  --errorRed:#EB5757;
+  --red:#DE4B4B;
+  --textDark:#3C3C3C;
+  --textGray:#C9C9C9;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+@font-face {
+  font-family: 'SFProText-Light';
+  src: url('./assets/SFProText-Light/SFProText-Light.eot');
+  src: url('./assets/SFProText-Light/SFProText-Light.eot?#iefix') format('embedded-opentype'),
+       url('./assets/SFProText-Light/SFProText-Light.svg#SFProText-Light') format('svg'),
+       url('./assets/SFProText-Light/SFProText-Light.ttf') format('truetype'),
+       url('./assets/SFProText-Light/SFProText-Light.woff') format('woff'),
+       url('./assets/SFProText-Light/SFProText-Light.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+/* @font-face {
+  font-family: 'SFProText-Regular';
+  src: url('./assets/SFProText-Regular/SFProText-Regular.eot');
+  src: url('./assets/SFProText-Regular/SFProText-Regular.eot?#iefix') format('embedded-opentype'),
+       url('./assets/SFProText-Regular/SFProText-Regular.svg#SFProText-Regular') format('svg'),
+       url('./assets/SFProText-Regular/SFProText-Regular.ttf') format('truetype'),
+       url('./assets/SFProText-Regular/SFProText-Regular.woff') format('woff'),
+       url('./assets/SFProText-Regular/SFProText-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+} */
+@font-face {
+  font-family: 'SFProText-Medium';
+  src: url('./assets/SFProText-Medium/SFProText-Medium.eot');
+  src: url('./assets/SFProText-Medium/SFProText-Medium.eot?#iefix') format('embedded-opentype'),
+       url('./assets/SFProText-Medium/SFProText-Medium.svg#SFProText-Medium') format('svg'),
+       url('./assets/SFProText-Medium/SFProText-Medium.ttf') format('truetype'),
+       url('./assets/SFProText-Medium/SFProText-Medium.woff') format('woff'),
+       url('./assets/SFProText-Medium/SFProText-Medium.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @media (prefers-reduced-motion: no-preference) {

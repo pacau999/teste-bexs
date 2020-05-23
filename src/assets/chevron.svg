@@ -1,0 +1,11 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" >
+  {/* <defs>
+    <style>.a{fill:#fff;}.b{fill:#de4b4b;}</style>
+  </defs> */}
+  <g transform="translate(-338 -312)">
+    <rect  fill="transparent" width="100%"  transform="translate(338 312)"/>
+    <path  fill="currentColor" d="M6.358,13.389.195,7.3a.65.65,0,0,1,0-.928L6.358.278a.971.971,0,0,1,1.36,0,.944.944,0,0,1,0,1.344L2.446,6.834l5.273,5.21a.944.944,0,0,1,0,1.345.971.971,0,0,1-1.36,0" transform="translate(341.333 324) rotate(-90)"/>
+  </g>
+</svg>
+

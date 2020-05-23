@@ -1,0 +1,44 @@
+.TextField{
+  /* font-family: inherit!important; */
+  color:var(--textDark);
+  font-family:Verdana, Geneva, Tahoma, sans-serif!important;
+  font-size: 17px;
+}
+
+.TextField .MuiFormLabel-root{
+  color:var(--textGray);
+  font-family: inherit;
+  font-size: inherit;
+  letter-spacing: normal;
+}
+.TextField .MuiFormLabel-root.Mui-error{
+  color:var(--textGray);
+  font-family: inherit;
+}
+.TextField .MuiInputLabel-animated{
+  transition-property: color, transform,font;
+}
+.TextField .MuiInputLabel-shrink{
+  transform: translate(0, 1.5px) ;
+  font-size: 13px;
+}
+
+
+.TextField .MuiInputBase-root{
+  font-family: inherit;
+  font-size: inherit;
+}
+.TextField .MuiInput-underline:before {
+  border-bottom: 1px solid var(--textGray);
+}
+.TextField .MuiInput-underline.Mui-error:after {
+  border-bottom-color: var(--errorRed);
+}
+.TextField .MuiFormHelperText-root{
+  font-family: inherit;
+  font-size: 13px;
+  letter-spacing: normal;
+}
+.TextField .MuiFormHelperText-root.Mui-error {
+  color: var(--errorRed);
+}

@@ -24,7 +24,7 @@ const PaymentCard = (props) => {
     <div className={`PaymentCard${flipped?' flipped':''}${valid?' identified':''}`}>
       <div className="inner">
         <div className="front">
-          <img className={`brand ${valid?'':'hidden'}`} src={valid &&  brands[validator.card.type] ? brands[validator.card.type] : ''} />
+          <img className={`brand ${valid &&  brands[validator.card.type] ?'':'hidden'}`} src={valid &&  brands[validator.card.type] ? brands[validator.card.type] : ''}  alt="card brand logo"/>
           <div className={`number ${number && number.length>0 ? '' :'untouched'}`}>
             {number ? 
               cardNumberFormatter.apply(number) :  
