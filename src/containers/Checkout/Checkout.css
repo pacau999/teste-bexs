@@ -1,0 +1,50 @@
+.Checkout{
+  background-color: white;
+  display: flex;
+  height: 596px;
+}
+.Checkout .red{
+  width: 352px;
+  color: white;
+  background-color: var(--red); 
+}
+.Checkout .red>.content{
+  padding-left: 68px;
+}
+.Checkout .red>.content,.Checkout .white>.content{
+  padding-top: 50px;
+}
+.Checkout .desktopGoBack{
+  font-size: 13px;
+  display: flex;
+  /* width: min-content; */
+  justify-content: left;
+  align-items: center;
+  margin-bottom: 51px;
+}
+.Checkout .desktopGoBack .icon-chevron-left{
+  font-size: 23px;
+  margin-right: 8px;
+}
+.Checkout .red .title{
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  margin-bottom: 30px;
+}
+.Checkout .red .title .icon{
+  margin-right: 15px;
+  width: 44px;
+  height: 44px;
+  border: 3px solid currentColor;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Checkout .red .title .icon .icon-card{
+  font-size: 50px;
+}
+.Checkout .white{
+  width: 600px;
+}

@@ -1,10 +1,17 @@
 .Navbar{
-  max-width: 1366px;
+ 
   height: 90.76px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+.Navbar .inner{
+  max-width: 1366px;
+  flex-grow: 1;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: white;
 }
 .Navbar .logo{
   display: flex;

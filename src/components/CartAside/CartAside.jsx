@@ -8,12 +8,12 @@ export const CartAside = () => {
       </div>
       <div className="divider top"/>
       <div className="details">
-        {Array(3).fill('').map(row=>(
-          <div className="tr">
-          <div className="tc">
-            <div className="skeleton left"/>
-          </div>
-          <div className="tc">
+        {Array(3).fill('').map((row,i)=>(
+          <div className="tr" key={i}>
+            <div className="tc">
+              <div className="skeleton left"/>
+            </div>
+            <div className="tc">
               <div className="skeleton right"/>
             </div>
           </div>
