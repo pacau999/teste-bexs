@@ -2,7 +2,7 @@
 This project is part of Bexs Front-end Developer test
 
 Layout: [Exame Frontend](https://xd.adobe.com/spec/9c4a9206-ac61-4050-796d-89c00fb79e91-ea7b)<br/>
-
+Live on [https://pacau999.github.io/](https://pacau999.github.io/)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
