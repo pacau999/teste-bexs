@@ -5,6 +5,7 @@
   justify-content: center;
   align-items: center;
   background-color: white;
+  padding: 0 15px;
 }
 .Navbar .inner{
   max-width: 1366px;
@@ -37,4 +38,16 @@
   border-radius: 5px;
   background-color:#9c9c9c;
   margin-left: 35px;
+}
+/* break point to give 1366x768 a full-hd like layout */
+@media(max-width:1396px){
+  .Navbar{
+    height: 60px;
+  }
+}
+/* Mobile break-point */
+@media(max-width:1365px){
+  .Navbar{
+    display: none;
+  }
 }

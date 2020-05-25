@@ -1,0 +1,37 @@
+.CheckoutForm{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  /* padding-left: 100px; */
+  /* margin-top: 50px; */
+}
+.CheckoutForm .MuiFormControl-root{
+  margin-bottom: 20px;
+}
+.CheckoutForm .submitButton{
+  width: 246px;
+  height: 51px;
+  background-color: var(--red);
+  border:none;
+  color:white;
+  cursor: pointer;
+  font-size: 17px;
+  font-family: 'SFProText-Medium';
+  border-radius: 10px;
+  margin-top: 21px;
+}
+.CheckoutForm .twoFieldsGroup{
+  display: flex;
+  width: 100%;
+}
+.CheckoutForm .twoFieldsGroup .left{
+  display: flex;
+  padding-right: 8px;
+  flex-grow: 1;
+}
+.CheckoutForm .twoFieldsGroup .right{
+  display: flex;
+  padding-left: 8px;
+  flex-grow: 1;
+}

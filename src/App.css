@@ -47,23 +47,32 @@
 .App>.contentContainer{
   display: flex;
   justify-content: center;
-  padding: 65px 0px;
+  padding: 65px 15px;
 }
-@media(min-width:1367px){
-  .App>.contentContainer{
-    padding: 65px 15px;
-  }
-}
+
 .App .contentContainer>.content{
   display: flex;
   max-width: 1366px;
   flex-grow: 1;
-  justify-content: space-around;
+  justify-content: space-evenly;
   /* padding: 0px 15px; */
 }
 .App .CartAside{
   /* margin-left: 15px; */
 }
-.App .Navbar{
-  padding: 0 15px;
+/* break point to give 1366x768 a full-hd like layout */
+@media(max-width:1396px){
+  .App>.contentContainer{
+    padding: 25px 0 0 0;
+  }
+}
+/* Mobile breaak point */
+
+@media(max-width:1365px){
+  .App>.contentContainer{
+    padding: 0;
+  }
+  .App .CartAside{
+    display: none;
+  }
 }

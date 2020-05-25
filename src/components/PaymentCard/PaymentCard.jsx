@@ -21,11 +21,12 @@ const PaymentCard = (props) => {
   }
   //will only change the card to blue(valid status) if the number provided already is potentially valid and the card brand is identified
   const valid = validator.isPotentiallyValid && validator.card && validator.card.type
+  
   return (
     <div className={`PaymentCard${flipped?' flipped':''}${valid?' identified':''}`}>
       <div className="inner">
         <div className="front">
-          <img className={`brand ${valid &&  brands[validator.card.type] ?'':'hidden'}`} src={valid &&  brands[validator.card.type] ? brands[validator.card.type] : ''}  alt="card brand logo"/>
+          <img className={`brand ${valid &&  brands[validator.card.type] ?'':'hidden'}`} src={valid &&  brands[validator.card.type] ? brands[validator.card.type] : ''}/>
           <div className={`number ${number && number.length>0 ? '' :'untouched'}`}>
             {number ? 
               cardNumberFormatter.apply(number) :  

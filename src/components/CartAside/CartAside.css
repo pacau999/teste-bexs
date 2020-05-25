@@ -1,8 +1,13 @@
 .CartAside{
   background-color: white;
-  padding: 52px 20px;
   width: 327px;
   height: min-content;
+}
+.CartAside .inner{
+  padding: 52px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  
 }
 .CartAside .title{
   font-size: 16px;
@@ -51,7 +56,8 @@
   width: 197.51px;
 }
 .CartAside .details .skeleton.right{
-  width:44px
+  width:44px;
+  margin-left:auto
 }
 .CartAside .total{
   display: table;
@@ -65,5 +71,6 @@
   width: 197.51px;
 }
 .CartAside .total .skeleton.right{
-  width:44px
+  width:44px;
+  margin-left:auto
 }

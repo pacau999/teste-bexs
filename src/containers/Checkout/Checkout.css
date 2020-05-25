@@ -6,6 +6,9 @@
 .Checkout .red>.content,.Checkout .white>.content{
   padding-top: 50px;
 }
+.Checkout .white>.content .CheckoutForm{
+  margin-top: 50px;
+}
 /* --------------------- RED (Left on Desktop, Top on Mobile) SIDE -------------------------- */
 
 .Checkout .red{
@@ -15,6 +18,9 @@
 }
 .Checkout .red>.content{
   padding-left: 64px;
+}
+.Checkout .mobileGoBack{
+  display:none
 }
 .Checkout .desktopGoBack{
   font-size: 13px;
@@ -33,6 +39,8 @@
   font-weight: bold;
   display: flex;
   margin-bottom: 30px;
+  justify-content: center;
+  align-items: center;
 }
 .Checkout .red .title .icon{
   margin-right: 15px;
@@ -50,12 +58,13 @@
 
 /* --------------------- White (Right on Desktop, Bottom on Mobile) SIDE -------------------------- */
 .Checkout .white{
-  width: 600px;
+  width:657px;
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
 }
 .Checkout .white>.content{
+  padding-left: 168px;
   padding-right: 64px;
   display: flex;
   flex-wrap: wrap;
@@ -63,4 +72,78 @@
 }
 .Checkout .white form{
   width: 100%;
+}
+/* break point to give 1366x768 a full-hd like layout */
+@media(max-width:1396px){
+  .Checkout{
+    height: 566px;
+  }
+  .Checkout .white{
+    width: 642px;
+  }
+}
+/* Mobile break point */
+@media(max-width:1365px){
+  .Checkout{
+    flex-wrap: wrap;
+    height:fit-content
+  }
+  .Checkout .red, .Checkout .white{
+    width: 100%;
+  }
+  .Checkout .red>.content{
+    padding: 30.5px 5px 0px 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .Checkout .Stepper{
+    display: none;
+  }
+  .Checkout .desktopGoBack{
+    display: none;
+  }
+  .Checkout .mobileGoBack{
+    width: 100%;
+    position: relative;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+  .Checkout .mobileGoBack .icon-chevron-left{
+    font-size: 35px;
+  }
+  .Checkout .mobileGoBack .right-spacer{
+    width: 35px;
+  }
+  .Checkout .red .title{
+    font-size: 16px;
+    width: 220px;
+    margin-bottom: 16px;
+  }
+  .Checkout .red .title .icon{
+    width: 34px;
+    height: 34px;
+  }
+  .Checkout .red .title .icon .icon-card{
+    font-size: 40px;
+  }
+  .Checkout .cardPortal{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .Checkout .PaymentCard{
+    margin-bottom: -74px;
+  }
+  .Checkout .white>.content .CheckoutForm{
+    margin: 0;
+    justify-content: center;
+  }
+  .Checkout .white>.content{
+    padding: 94px 40px 40px 40px ;
+  }
+  
 }

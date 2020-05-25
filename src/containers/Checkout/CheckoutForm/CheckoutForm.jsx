@@ -2,20 +2,24 @@ import React,{useState} from 'react'
 import ReactDOM from 'react-dom';
 import {Formik} from 'formik'
 import * as Yup from 'yup'
-import TextField from '../../../components/TextField/TextField'
 import {IMaskMixin} from 'react-imask';
 import cardValidator from 'card-validator'
 import {parse as dateParse,isValid as dateIsValid} from 'date-fns'
-import PaymentCard from '../../../components/PaymentCard/PaymentCard';
-import Select from '../../../components/Select/Select';
 import floatToBrl from '../../../utils/floatToBrl'
 
-const MaskedTextField = IMaskMixin(({inputRef, ...props})=>(
+import PaymentCard from '../../../components/PaymentCard/PaymentCard';
+import Select from '../../../components/Select/Select';
+import TextField from '../../../components/TextField/TextField'
+
+import './CheckoutForm.css'
+
+
+const MaskedTextField = React.memo(IMaskMixin(({inputRef, ...props})=>(
   <TextField
     inputRef={inputRef}
     {...props}
   />
-))
+)))
 // const validator= cardValidator.number(number,{maxLength: 16})
 const installments = Array(12).fill({}).map((option,index)=>({
   value:index+1,
@@ -36,7 +40,7 @@ const errorMessages={
   },
   exp:{
     invalid:'Data inválida',
-    empity:'Insira a data de validade'
+    empity:'Insira a validade'
   },
   installments:{
     empity:'Selecione o número de parcelas'
@@ -65,7 +69,6 @@ const validationSchema = Yup.object().shape({
     .number(errorMessages.cvv.invalid)
     .required(errorMessages.cvv.empity)
     .test('cvv-validator',errorMessages.cvv.invalid,function(value){
-      console.log(value)
       return value && String(value).length>2
     }),
   installments: Yup
@@ -75,12 +78,12 @@ const validationSchema = Yup.object().shape({
 })
 const CheckoutForm = (props) => {
   const [cardFlipped,setCardFlipped] = useState(false)
-  console.log(dateParse)
   return (
     <Formik
       enableReinitialize 
       initialValues={{number:'',name:'',exp:'',cvv:'',installments:''}}
       validationSchema={validationSchema}
+      onSubmit={props.onSubmit}
     >
       {({
         values,
@@ -93,12 +96,14 @@ const CheckoutForm = (props) => {
         isSubmitting,
         /* and other goodies */
       }) =>{
-        console.log(values)
         return(
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} className="CheckoutForm">
             {props.cardPortalRef && props.cardPortalRef.current && ReactDOM.createPortal(
               <PaymentCard 
-                {...values}
+                number={values.number}
+                name={values.name}
+                cvv={values.cvv}
+                exp={values.exp}
                 flipped={cardFlipped}
               />
             ,props.cardPortalRef.current)}
@@ -113,7 +118,7 @@ const CheckoutForm = (props) => {
               onBlur={handleBlur}
               fullWidth
               error={touched.number && errors.number && true}
-              helperText={touched.number && errors.number}
+              helperText={(touched.number && errors.number) || ' '}
             />
             <TextField
               fullWidth
@@ -123,31 +128,43 @@ const CheckoutForm = (props) => {
               onChange={handleChange}
               onBlur={handleBlur}
               error={touched.name && errors.name && true}
-              helperText={touched.name && errors.name}
+              helperText={(touched.name && errors.name) || ' '}
             />
-            <MaskedTextField
-              label="Validade"
-              mask="00/00"
-              name="exp"
-              value={values.exp}
-              onAccept={(value)=>{setFieldValue('exp',value,true)}}
-              onBlur={handleBlur}
-              fullWidth
-              error={touched.exp && errors.exp && true}
-              helperText={touched.exp && errors.exp}
-            />
-             <MaskedTextField
-              label="CVV"
-              mask="0000"
-              name="cvv"
-              value={values.cvv}
-              onAccept={(value)=>{setFieldValue('cvv',value,true)}}
-              onFocus={()=>{setCardFlipped(true)}}
-              onBlur={(event)=>{handleBlur(event); setCardFlipped(false)}}
-              fullWidth
-              error={touched.cvv && errors.cvv && true}
-              helperText={touched.cvv && errors.cvv}
-            />
+            <div className="twoFieldsGroup">
+              <div className="left">
+               
+                <MaskedTextField
+                  label="Validade"
+                  mask="00/00"
+                  name="exp"
+                  value={values.exp}
+                  onAccept={(value)=>{setFieldValue('exp',value,true)}}
+                  onBlur={handleBlur}
+                  fullWidth
+                  error={touched.exp && errors.exp && true}
+                  helperText={(touched.exp && errors.exp) ||' '}
+                />
+               
+              </div>
+              <div className="right">
+                
+                <MaskedTextField
+                  label="CVV"
+                  mask="0000"
+                  name="cvv"
+                  value={values.cvv}
+                  onAccept={(value)=>{setFieldValue('cvv',value,true)}}
+                  onFocus={()=>{setCardFlipped(true)}}
+                  onBlur={(event)=>{handleBlur(event); setCardFlipped(false)}}
+                  fullWidth
+                  error={touched.cvv && errors.cvv && true}
+                  helperText={(touched.cvv && errors.cvv) || ' '}
+                />
+                
+              </div>
+              
+            </div>
+            
             <Select
                fullWidth
                name="installments"
@@ -156,9 +173,10 @@ const CheckoutForm = (props) => {
                onChange={handleChange}
                onBlur={handleBlur}
                error={touched.installments && errors.installments && true}
-               helperText={touched.installments && errors.installments}
+               helperText={(touched.installments && errors.installments) || ' '}
                label="Número de parcelas"
             />
+            <button type="submit" className="submitButton">CONTINUAR</button>
           </form>
         )
       }}

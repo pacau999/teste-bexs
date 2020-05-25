@@ -4,7 +4,9 @@
   font-family:Verdana, Geneva, Tahoma, sans-serif!important;
   font-size: 17px;
 }
-
+.TextField .MuiInput-input{
+  padding: 3px 0 5px;
+}
 .TextField .MuiFormLabel-root{
   color:var(--textGray);
   font-family: inherit;
@@ -17,6 +19,9 @@
 }
 .TextField .MuiInputLabel-animated{
   transition-property: color, transform,font;
+}
+.TextField .MuiInputLabel-formControl{
+  transform: translate(0, 18px) scale(1);
 }
 .TextField .MuiInputLabel-shrink{
   transform: translate(0, 1.5px) ;

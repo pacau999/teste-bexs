@@ -19,7 +19,7 @@ function App() {
       <section className="contentContainer">
         <div className="content">
           <Checkout/>
-          {/* <CartAside/> */}
+          <CartAside/>
         </div>
         
        
