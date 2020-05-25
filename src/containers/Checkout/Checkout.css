@@ -3,16 +3,18 @@
   display: flex;
   height: 596px;
 }
+.Checkout .red>.content,.Checkout .white>.content{
+  padding-top: 50px;
+}
+/* --------------------- RED (Left on Desktop, Top on Mobile) SIDE -------------------------- */
+
 .Checkout .red{
   width: 352px;
   color: white;
   background-color: var(--red); 
 }
 .Checkout .red>.content{
-  padding-left: 68px;
-}
-.Checkout .red>.content,.Checkout .white>.content{
-  padding-top: 50px;
+  padding-left: 64px;
 }
 .Checkout .desktopGoBack{
   font-size: 13px;
@@ -45,6 +47,20 @@
 .Checkout .red .title .icon .icon-card{
   font-size: 50px;
 }
+
+/* --------------------- White (Right on Desktop, Bottom on Mobile) SIDE -------------------------- */
 .Checkout .white{
   width: 600px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+.Checkout .white>.content{
+  padding-right: 64px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.Checkout .white form{
+  width: 100%;
 }

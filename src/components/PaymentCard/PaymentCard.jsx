@@ -9,9 +9,10 @@ import hipercard from './assets/hipercard.png'
 
 const PaymentCard = (props) => {
   const cardNumberFormatter = new StringMask('0000 0000 0000 0000')
-  const {number, name, exp, cvv,flipped} = props
+  var {number} = props
+  const {name, exp, cvv,flipped} = props
+  number=number? number.replace(/ /g,'') : undefined
   const validator= cardValidator.number(number,{maxLength: 16})
-  console.log(cardValidator)
   const brands ={
     visa,
     mastercard,

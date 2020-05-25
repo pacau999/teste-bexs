@@ -1,19 +1,21 @@
-import React,{useState} from 'react'
+import React,{useState,useRef} from 'react'
 import floatToBrl from '../../utils/floatToBrl'
 import './Checkout.css'
 import PaymentCard from '../../components/PaymentCard/PaymentCard'
+import Stepper from '../../components/Stepper/Stepper'
+import CheckoutForm from './CheckoutForm/CheckoutForm'
+
+
 
 const Checkout = () => {
-  const [flipped,setFlipped]= useState(false)
+  
   const [number,setNumber] = useState(null)
-  const installments = Array(12).fill({}).map((option,index)=>({
-    value:index+1,
-    label:`${index+1}x ${floatToBrl(12000/(index+1))} sem juros`
-  }))
+  
   const steps=['Carrinho','Pagamento','Confirmação']
-  const toggleFlipped = async ()=>{
-    await setFlipped(!flipped)
-  }
+  const cardPortal = useRef(null)
+  
+  
+  
   return (
     <section className="Checkout">
       <div className="red">
@@ -30,11 +32,17 @@ const Checkout = () => {
               Adicione um novo cartão de crédito
             </div>
           </div>
-          <PaymentCard/>
+          
+          {/* The PaymentCardComponent is part of CheckoutForm component and will be rendered here through a React.Portal */}
+          <div ref={cardPortal}>
+          </div>
         </div>
       </div>
       <div className="white">
-
+        <div className="content">
+          <Stepper steps={steps} current={1} />
+          <CheckoutForm cardPortalRef={cardPortal}/>
+        </div>
       </div>
     </section>
   )
